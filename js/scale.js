@@ -16,8 +16,6 @@ function changedScaleImage(value = DEFAULT_SCALE) {
 
 }
 
-changedScaleImage();
-
 function onbuttonSmallerClick() {
 
   const presentValue = parseInt(scaleControl.value, 10);
@@ -31,5 +29,27 @@ function onbuttonSmallerClick() {
 
 }
 
+function onButtonBiggerClick() {
+
+  const presentValue = parseInt(scaleControl.value, 10);
+
+  let newValue = presentValue + SCALE_STEP;
+  if (newValue > MAX_SCALE) {
+    newValue = MAX_SCALE;
+  }
+
+  changedScaleImage(newValue);
+
+}
 
 buttonSmaller.addEventListener('click', onbuttonSmallerClick);
+buttonBigger.addEventListener('click', onButtonBiggerClick);
+
+function resetScale() {
+
+  changedScaleImage();
+
+}
+
+export { resetScale };
+

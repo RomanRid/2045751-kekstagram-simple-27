@@ -1,3 +1,5 @@
+import { resetScale } from "./scale.js";
+
 const body = document.querySelector('body');
 const form = document.querySelector('.img-upload__form');
 const downloadButton = form.querySelector('.img-upload__input');
@@ -17,6 +19,7 @@ function onPopupEscKeyDown(evt) {
 
 function showPopup() {
 
+  resetScale();
   overlay.classList.remove('hidden');
   body.classList.add('modal-open');
 
@@ -26,6 +29,7 @@ function showPopup() {
 
 function closePopup() {
 
+  resetScale();
   overlay.classList.add('hidden');
   body.classList.remove('modal-open');
 
